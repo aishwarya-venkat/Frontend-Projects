@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do List</title>
+</head>
+<body>
+<div class="container">
+<h1>To Do List</h1>
+<input id="input">
+<button onclick="additem(event)" id="additem">+</button>
+<ul id="ul">
+    <li id="li">Grocery<button onclick="deleteitem(event)" id="deleteitem">x</button></li>
+</ul>
+</div>
+</body>
+</html>
+<style>
+    html, body{
+        width: 300px;
+        height: 500px;
+        margin:auto;
+        font-family: Arial, Helvetica, sans-serif;
+        justify-content: space-between;
+
+    }
+    button{
+        background-color: orange;
+        border-radius: 4px;
+        margin: 6px;
+
+    }
+    #input
+    {
+        border-radius: 4px;
+        margin: 1px ;
+    }
+    ul li{
+        justify-content: space-between;
+        font: 1.2em Arial;
+    }
+   
+
+    
+</style>
+<script>
+    var input=document.getElementById("input")
+    var ul=document.getElementById("ul")
+    var li=document.getElementById("li")
+    li.addEventListener('click' ,()=>{
+            li.style.textDecoration='line-through'
+        })
+        
+    function additem(event)
+    {
+        var listitem=document.createElement("li")
+        listitem.innerHTML=input.value +   "<button onclick='deleteitem(event)'id='deleteitem'>x</button>" 
+        ul.append(listitem)
+        listitem.addEventListener('click' ,()=>{
+            listitem.style.textDecoration='line-through'
+        })
+        input.value="";
+    }
+
+    function deleteitem(event)
+    {
+        event.target.parentElement.remove()
+    }
+</script>
