@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Append Element</title>
+</head>
+<body>
+<div class="container">
+<h1 >Append Element</h1>
+Name:<input id="input">
+<button onclick="saveme(event)">Save</button>
+</div>
+<div id="result">
+
+</div>
+</body>
+
+<script>
+    function saveme(event)
+    {
+    var input=document.getElementById("input")
+    var result=document.getElementById("result")
+    var listitem=document.createElement("listitem")
+    listitem.innerText=input.value
+    result.append(listitem)
+}
+    
+</script>
+
+
+
+
+
