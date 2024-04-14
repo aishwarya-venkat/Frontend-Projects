@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STUDENT FORM</title>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<form action = "#" name = "myForm" onSubmit = "return (validate())";>
+<h2 id="heading">STUDENT FORM</h2>
+<div id="container">
+<table id="tb1" border="2">
+<tr>
+<div class="fname">
+<th><label for="fname">Name</label></th>
+<td><input type="text" id="fname" name="fname" autocomplete="given-name"></td>
+</div>
+</tr>
+<tr >
+<div class="age">
+<th><label for="age">Age</label></th>
+<td><input type="number" id="age" name="age"></td>
+</div>
+</tr>
+<tr>
+<div class="gender">
+<th><h7>Gender</h7></th>
+<td><input type="radio" id="gendermale" name="gendermale" value="male">
+<label for="gendermale">Male</label>
+<input type="radio" id="genderfemale" name="genderfemale" value="female">
+<label for="genderfemale">Female</label></td>
+</div>
+</tr>
+<tr>
+<div class="course">
+<th><label for="course">Course</label></th>
+<td><select id="course">
+    <option value="html">HTML</option>
+    <option value="css">CSS</option>
+    <option value="javascript">Javascript</option>
+</select></td>
+</div>
+</tr>
+<tr>
+<div class="email">
+<th><label for="email">E-mail</label></th>
+<td><input type="email" id="email" name="email" autocomplete="given-name"></td>
+</div>
+</tr>
+<tr>
+<td colspan="2">
+    <button onclick="additem(event)" id="additem">Save</button>
+</td>
+</tr>
+</table>
+
+</div>
+
+
+</form>
+
+</body>
+</html>
+
+<style>
+
+html,body{ 
+  display: inline-block;
+  text-align: center; 
+}
+
+
+
+#form{
+    text-align: center;
+}
+#additem{
+    background-color: aqua;
+    width: 100%;
+    text-align: center;
+}
+#course{
+    width: 100%;
+}
+#result{
+    margin-top: 10px;
+    text-align: left;
+}
+</style>
+
+<script type="text/javascript">
+	
+	function validate(){
+
+		if(document.myForm.fname.value==""){
+
+			alert("Please provide First Name !");
+			document.myForm.fname.focus();
+			return false;
+		}
+
+		if(document.myForm.age.value==""){
+
+			alert("Please Enter Age !");
+			document.myForm.age.focus();
+			return false;
+		}
+
+		if(document.myForm.gender.value==""){
+
+			alert("Please Enter Gender !!");
+			document.myForm.gender.focus();
+			return false;
+		}
+        if(document.myForm.course.value==""){
+        alert("Please Enter course !!");
+        document.myForm.course.focus();
+        return false;
+        } 
+
+		if(document.myForm.Email.value==""){
+
+			alert("Please provide valid Email !!");
+			document.myForm.email.focus();
+			return false;
+		}
+
+		return(true);
+
+			}
+
+
+</script>
